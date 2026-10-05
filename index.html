@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>嘉義要去哪</title>
+  <meta name="description" content="嘉義活動一覽" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">嘉義要去哪</div>
+      <nav class="menu">
+        <a href="#today">當期活動</a>
+        <a href="#search">搜尋</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="badge">嘉義活動一覽</span>
+          <h1>10/02 - 10/08 嘉義活動一覽</h1>
+          <p>探索嘉義最新活動、展覽、音樂、美食與市集，找到你今晚要去哪裡。</p>
+          <div class="hero-actions">
+            <a href="#today" class="primary-btn">查看活動</a>
+            <a href="#search" class="secondary-btn">快速搜尋</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="mini-label">本期熱門</div>
+          <h3>光織影舞 ×《小熊維尼》100週年</h3>
+          <p>嘉義年度亮點活動</p>
+          <div class="mini-meta">
+            <span>9/25 - 10/11</span>
+            <span>展覽</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="search" class="filters-section">
+      <div class="container">
+        <div class="search-row">
+          <input id="searchInput" type="text" placeholder="搜尋活動、地點、分類..." />
+        </div>
+        <div class="chips" id="categoryChips"></div>
+      </div>
+    </section>
+
+    <section id="today" class="events-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>活動列表</h2>
+          <span id="resultCount">0 個活動</span>
+        </div>
+        <div class="event-grid" id="eventGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
