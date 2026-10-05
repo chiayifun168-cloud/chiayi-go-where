@@ -228,10 +228,7 @@ const categoryOrder = [
   "文創"
 ];
 
-const state = {
-  selectedCategory: "全部",
-  query: ""
-};
+const state = { selectedCategory: "全部", query: "" };
 
 const eventGrid = document.getElementById("eventGrid");
 const searchInput = document.getElementById("searchInput");
