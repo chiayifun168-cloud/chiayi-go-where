@@ -1,8 +1,7 @@
 const sheetConfig = {
   enabled: true,
   url: "https://script.google.com/macros/s/AKfycbxM6b5b-XuGsWbV96RvpiGrbZ-qaaOOSW2fMehoFcup9ffYt93LSN0cmzDBEbCRarvM/exec
-"
-};
+"};
 const events = [
   {
     title: "光織影舞 ×《小熊維尼》100週年",
