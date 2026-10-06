@@ -2,7 +2,10 @@ const sheetConfig = {
   enabled: true,
   url: "https://script.google.com/macros/s/AKfycbxM6b5b-XuGsWbV96RvpiGrbZ-qaaOOSW2fMehoFcup9ffYt93LSN0cmzDBEbCRarvM/exec"
 };
-const fallbackEvents = []; 
+
+const fallbackEvents = [];
+
+let events = [];
 
 const categoryOrder = [
   "全部",
@@ -34,6 +37,39 @@ const eventGrid = document.getElementById("eventGrid");
 const searchInput = document.getElementById("searchInput");
 const categoryChips = document.getElementById("categoryChips");
 const resultCount = document.getElementById("resultCount");
+
+async function loadEvents() {
+  try {
+    if (sheetConfig.enabled && sheetConfig.url) {
+      const response = await fetch(sheetConfig.url, { cache: "no-store" });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const data = await response.json();
+      const rows = data.data || data || [];
+
+      if (Array.isArray(rows) && rows.length > 0) {
+        events = rows.map(item => ({
+          date: item.date || "",
+          title: item.title || "新活動",
+          url: item.url || "#",
+          category: item.category || "展覽",
+          location: item.location || "嘉義市",
+          region: item.region || "嘉義市",
+          tab: item.tab || "熱門",
+          summary: item.summary || "活動資訊即將更新。",
+          image: item.image || "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=900&q=80"
+        }));
+        console.log("✅ Google Sheets 資料已加載:", events.length, "個活動");
+        return;
+      }
+    }
+  } catch (error) {
+    console.warn("⚠️ Google Sheets 加載失敗，使用備用資料:", error);
+  }
+
+  events = fallbackEvents;
+  console.log("📌 使用備用資料");
+}
 
 function renderChips() {
   categoryChips.innerHTML = "";
@@ -183,4 +219,6 @@ searchInput.addEventListener("input", (event) => {
   syncSelection();
 });
 
-render();
+loadEvents().then(() => {
+  render();
+});
