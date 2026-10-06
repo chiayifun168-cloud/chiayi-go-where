@@ -1,70 +1,175 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>嘉義要去哪</title>
-  <meta name="description" content="嘉義活動一覽" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="topbar">
-    <div class="container nav">
-      <div class="brand">嘉義要去哪</div>
-      <nav class="menu">
-        <a href="#today">當期活動</a>
-        <a href="#search">搜尋</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <span class="badge">嘉義活動一覽</span>
-          <h1>10/02 - 10/08 嘉義活動一覽</h1>
-          <p>探索嘉義最新活動、展覽、音樂、美食與市集，找到你今晚要去哪裡。</p>
-          <div class="hero-actions">
-            <a href="#today" class="primary-btn">查看活動</a>
-            <a href="#search" class="secondary-btn">快速搜尋</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>嘉義要去哪｜活動平台</title>
+    <meta
+      name="description"
+      content="嘉義要去哪，探索嘉義最新活動、展覽、音樂、美食與市集。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <div class="brand-block">
+          <div class="brand-mark">嘉</div>
+          <div class="brand-copy">
+            <span class="brand-name">嘉義要去哪</span>
+            <small>活動平台</small>
           </div>
         </div>
-        <div class="hero-card">
-          <div class="mini-label">本期熱門</div>
-          <h3>光織影舞 ×《小熊維尼》100週年</h3>
-          <p>嘉義年度亮點活動</p>
-          <div class="mini-meta">
-            <span>9/25 - 10/11</span>
-            <span>展覽</span>
+
+        <nav class="main-nav" aria-label="主導覽">
+          <a href="#discover">探索</a>
+          <a href="#featured">精選</a>
+          <a href="#events">活動列表</a>
+        </nav>
+
+        <a href="#events" class="nav-cta">看活動</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <span class="eyebrow">嘉義活動一覽</span>
+            <h1>今天想去哪裡玩？</h1>
+            <p>
+              從展覽、音樂、夜市、手作到文創導覽，找到最適合你的嘉義好去處。
+            </p>
+
+            <div class="hero-actions">
+              <a href="#events" class="primary-btn">立即瀏覽</a>
+              <a href="#discover" class="secondary-btn">探索分類</a>
+            </div>
+
+            <div class="stats-row">
+              <div class="stat-box">
+                <strong>20+</strong>
+                <span>精选活動</span>
+              </div>
+              <div class="stat-box">
+                <strong>8</strong>
+                <span>熱門分類</span>
+              </div>
+              <div class="stat-box">
+                <strong>3 min</strong>
+                <span>快速找到好去處</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-panel" id="featured">
+            <div class="hero-panel-header">
+              <span class="panel-label">本週熱門</span>
+              <span class="panel-tag">甄選</span>
+            </div>
+
+            <div class="feature-visual">
+              <img
+                src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=900&q=80"
+                alt="熱門活動"
+              />
+            </div>
+
+            <div class="feature-content">
+              <h2>光織影舞 ×《小熊維尼》100週年</h2>
+              <p>嘉義年度亮點展覽，結合光影與故事體驗，適合全家一起探索。</p>
+              <div class="feature-meta">
+                <span>9/25 - 10/11</span>
+                <span>展覽</span>
+                <span>嘉義市</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="search" class="filters-section">
-      <div class="container">
-        <div class="search-row">
-          <input id="searchInput" type="text" placeholder="搜尋活動、地點、分類..." />
+      <section class="discover" id="discover">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <span class="section-kicker">探索嘉義</span>
+              <h2>以分類快速找到你想參加的活動</h2>
+            </div>
+          </div>
+
+          <div class="category-grid">
+            <button class="category-card active" data-category="全部" type="button">
+              <span>🎉</span>
+              <strong>全部</strong>
+              <small>所有活動</small>
+            </button>
+            <button class="category-card" data-category="展覽" type="button">
+              <span>🎭</span>
+              <strong>展覽</strong>
+              <small>文化體驗</small>
+            </button>
+            <button class="category-card" data-category="音樂" type="button">
+              <span>🎵</span>
+              <strong>音樂</strong>
+              <small>演出活動</small>
+            </button>
+            <button class="category-card" data-category="市集" type="button">
+              <span>🛍️</span>
+              <strong>市集</strong>
+              <small>美食創作</small>
+            </button>
+            <button class="category-card" data-category="手作" type="button">
+              <span>🖐️</span>
+              <strong>手作</strong>
+              <small>親子體驗</small>
+            </button>
+            <button class="category-card" data-category="導覽" type="button">
+              <span>🌙</span>
+              <strong>導覽</strong>
+              <small>城市探險</small>
+            </button>
+          </div>
         </div>
-        <div class="chips" id="categoryChips"></div>
-      </div>
-    </section>
+      </section>
 
-    <section id="today" class="events-section">
-      <div class="container">
-        <div class="section-head">
-          <h2>活動列表</h2>
-          <span id="resultCount">0 個活動</span>
+      <section class="filters-section" id="events">
+        <div class="container">
+          <div class="toolbar">
+            <div class="search-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10.5 3a7.5 7.5 0 015.88 12.8l4.42 4.42 1.41-1.41-4.42-4.42A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/>
+              </svg>
+              <input id="searchInput" type="text" placeholder="搜尋活動、地點、分類..." />
+            </div>
+          </div>
+
+          <div class="chip-wrap">
+            <div class="chips" id="categoryChips" aria-label="活動分類篩選"></div>
+          </div>
         </div>
-        <div class="event-grid" id="eventGrid"></div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <script src="script.js"></script>
-</body>
+      <section class="events-section">
+        <div class="container">
+          <div class="section-header events-header">
+            <div>
+              <span class="section-kicker">活動列表</span>
+              <h2>熱門活動與即將開跑</h2>
+            </div>
+            <span class="result-count" id="resultCount">0 個活動</span>
+          </div>
+
+          <div class="event-grid" id="eventGrid"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>
